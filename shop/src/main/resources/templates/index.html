@@ -10,7 +10,12 @@
     <link rel="icon" type="image/x-icon" href="/bootstrap/assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/bootstrap/css/styles.css" rel="stylesheet" />
+<style>
+    tb {
+        padding:40px
 
+    }
+</style>
 </head>
 <body id="page-top">
 <!-- Navigation-->
@@ -35,7 +40,10 @@
     <div class="container px-4 text-center">
         <h1 class="fw-bolder">Welcome to Fits</h1>
         <p class="lead">자신의 체형 어울리는 옷이 궁금한가요?</p>
-        <a class="btn btn-lg btn-light" href="/start">Start Fits!</a>
+        <form action="/start">
+          <h3>로그인 후 서비스를 이용해보세요!</h3>
+        </form>
+
     </div>
 </header>
 <!-- About section-->
@@ -105,25 +113,25 @@
             <div class="col-lg-8">
                 <h2>Contact us</h2>
                 <h2 class="lead">Our team of customer care Fits is ready to hear from you. </h2>
-                <h3>- - - - -</h3>
+                <hr>
                 <h2>Get In Touch</h2>
-                <table width="1000dx" border="0">
+                <br>
+                <table class="tb" width="1000dx" border="0">
                     <tr>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/address.png" width="100" height="100" ></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/call.png"width="100" height="100" align="center"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/email.png"width="100" height="100" align="center"></td>
+                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/address.png" width="80" height="80" align="right"></td>
+                        <td align="center">ADDRESS) Fit Team, 116 Samseongyo-ro 16-gil, Seongbuk-gu, Seoul</td>
                     </tr>
-
+                    <tr></tr>
                     <tr>
-                        <td align="center">ADDRESS</td>
-                        <td align="center">PHONE</td>
-                        <td align="center">EMAIL</td>
+                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/call.png"width="80" height="80" align="right"></td>
+                        <td align="center">PHONE) Office +82 760 3921</td>
+
                     </tr>
-
+                    <tr></tr>
                     <tr>
-                        <td>Fit Team, 116 Samseongyo-ro 16-gil, Seongbuk-gu, Seoul</td>
-                        <td>Office +82 760 3921</td>
-                        <td>fits_development@hansung.ac.kr</td>
+                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/email.png"width="80" height="80" align="right"></td>
+                        <td align="center">EMAIL) fits_development@hansung.ac.kr</td>
+
                     </tr>
                 </table>
             </div>

@@ -5,9 +5,13 @@ import com.shop.dto.MemberFormDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.apache.catalina.Group;
+import org.apache.catalina.User;
+import org.apache.catalina.UserDatabase;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
+import java.util.Iterator;
 
 @Entity
 @Table(name = "member")

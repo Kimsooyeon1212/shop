@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="shop" target="1.8" />
+      <module name="shop" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
