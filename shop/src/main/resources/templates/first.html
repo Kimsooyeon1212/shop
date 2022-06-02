@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>{{title}}</title>
+</head>
+<body>
+
+<div class="container">
+     <img src="{{ url_for('stream')}}" width="70%">
+    <p id="test"></p>
+</div>
+<script>
+
+      var source = new EventSource("/info");
+    source.addEventListener('message', function(e) {
+        var data = JSON.parse(e.data);
+        // document.write(e.data);
+        if (data.mydata == "data"){
+            // document.getElementById("success").innerHTML = "Finish";
+            //여기여기
+             //여기여기
+            source.removeEventListener('message', arguments.callee)
+//location.href="/경로?보낼변수명=" + 값;
+                    location.href = "/second"; //timeselect로 이동
+              //2초 타이머
+            // sleep(3000);
+
+        }
+    },false);
+</script>
+</body>
+</html>
+
+

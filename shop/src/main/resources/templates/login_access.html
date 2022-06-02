@@ -10,12 +10,7 @@
     <link rel="icon" type="image/x-icon" href="/bootstrap/assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/bootstrap/css/styles.css" rel="stylesheet" />
-    <style>
-        tb {
-            padding:40px
 
-        }
-    </style>
 </head>
 <body id="page-top">
 <!-- Navigation-->
@@ -40,10 +35,28 @@
     <div class="container px-4 text-center">
         <h1 class="fw-bolder">Welcome to Fits</h1>
         <p class="lead">자신의 체형 어울리는 옷이 궁금한가요?</p>
-        <form action="/start">
-            <h3>로그인 후 서비스를 이용해보세요!</h3>
-        </form>
+        <script>
+            window.onload = function(){
+                document.getElementById('btn').onclick = function(){
 
+                    var email = document.getElementById('email_name').innerHTML;
+
+                    var email_param = document.getElementById('email_param');
+                    email_param.value = email;
+
+
+                    document.getElementById('frm').submit();
+
+                    return false
+                }
+            }
+        </script>
+        <form action="/start" id = "frm">
+            <input type="hidden" name="email" value="" id = "email_param">
+            <h1>Welcome <span id = "email_name" sec:authentication="principal.username">User</span>님!</h1>
+
+            <button class="btn btn-lg btn-light" type="button" id="btn">Start Fits!</button>
+        </form>
     </div>
 </header>
 <!-- About section-->
@@ -113,7 +126,7 @@
             <div class="col-lg-8">
                 <h2>Contact us</h2>
                 <h2 class="lead">Our team of customer care Fits is ready to hear from you. </h2>
-                <hr>
+                <h3>- - - - -</h3>
                 <h2>Get In Touch</h2>
                 <br>
                 <table class="tb" width="1000dx" border="0">
@@ -148,5 +161,4 @@
 <script src="../static/bootstrap/js/scripts.js"></script>
 </body>
 </html>
-
 

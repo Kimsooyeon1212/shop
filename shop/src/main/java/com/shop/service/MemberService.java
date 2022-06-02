@@ -3,6 +3,7 @@ package com.shop.service;
 
 import com.shop.dto.MemberDto;
 import com.shop.entity.Member;
+import com.shop.entity.Result;
 import com.shop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -14,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,6 +24,7 @@ import java.util.Optional;
 public class MemberService implements UserDetailsService {
 
     private final MemberRepository memberRepository;
+
 
     public Member saveMember(Member member){
         validateDuplicateMember(member);
@@ -48,10 +51,10 @@ public class MemberService implements UserDetailsService {
                 .username(member.getEmail())
                 .password(member.getPassword())
                 .roles(member.getRole().toString())
-                .build();
+               .build();
     }
 
-    //성별에 따른 start page 다르게 구
+    //성별에 따른 start page 다르게 구현
     public String getStartPage(String email) {
         Optional<Member> optionalMember = memberRepository.findByEmail(email);
 
@@ -65,4 +68,6 @@ public class MemberService implements UserDetailsService {
         }
         return "/womanStart.html";
     }
+
+
 }
