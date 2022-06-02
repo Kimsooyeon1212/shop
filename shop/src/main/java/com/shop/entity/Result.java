@@ -14,10 +14,10 @@ import javax.persistence.*;
 @ToString
 public class Result {
 
-    @Id
     @Column(name="result_id")
     private Long id;
 
+    @Id
     private String name;
 
     @Column(unique = true)

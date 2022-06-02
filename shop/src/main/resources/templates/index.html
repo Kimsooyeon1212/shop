@@ -1,152 +1,173 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+<html lang="en" class="no-js" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fits</title>
-    <link rel="icon" type="image/x-icon" href="/bootstrap/assets/favicon.ico" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="/bootstrap/css/styles.css" rel="stylesheet" />
-    <style>
-        tb {
-            padding:40px
+    <meta property="og:url" content="https://tympanus.net/Development/HoverPreviewMiniMap/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hover Preview with Mini Map (No cursor demo) | Codrops">
+    <meta property="og:description" content="An experimental hover effect, where a content preview is shown while a mini map indicates the position of the cursor.">
+    <meta property="og:image" content="https://tympanus.net/codrops/wp-content/uploads/2022/03/HoverPreviewMiniMap_Social.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="tympanus.net">
+    <meta property="twitter:url" content="https://tympanus.net/Development/HoverPreviewMiniMap/">
+    <meta name="twitter:title" content="Hover Preview with Mini Map (No cursor demo) | Codrops">
+    <meta name="twitter:description" content="An experimental hover effect, where a content preview is shown while a mini map indicates the position of the cursor.">
+    <meta name="twitter:image" content="https://tympanus.net/codrops/wp-content/uploads/2022/03/HoverPreviewMiniMap_Social.jpg">
+    <meta name="description" content="An experimental hover effect, where a content preview is shown while a mini map indicates the position of the cursor.">
+    <meta name="keywords" content="mini map, hover, filter, web design, demo, javascript">
+    <meta name="author" content="Codrops">
+    <link rel="icon shortcut" href="/bootstrap/assets/favicon.ico" />
+    <link rel="stylesheet" href="https://use.typekit.net/vyr6uuw.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/index.css">
+    <script>
+        document.documentElement.className="js";
+        var supportsCssVars=function(){
+            var e,t=document.createElement("style");
+            return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e
+        };
+        supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
+    <script src="//tympanus.net/codrops/adpacks/analytics.js">
 
-        }
-    </style>
+    </script>
 </head>
-<body id="page-top">
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <div class="container px-4">
-        <a class="navbar-brand" href="#page-top">Fits</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item" sec:authorize="isAnonymous()"><a class="nav-link" href="/members/new">Sign Up</a></li>
-                <li class="nav-item" sec:authorize="isAnonymous()"><a class="nav-link" href="/members/login">Login</a></li>
-                <li class="nav-item" sec:authorize="isAuthenticated()"><a class="nav-link" href="/members/logout">Logout</a></li>
-            </ul>
-        </div>
+<body class="loading">
+<main>
+    <div class="frame frame--header">
+        <a class="frame__title" href="/">Fits</a>
+        <nav class="frame__links">
+            <a class="hover-line" sec:authorize="isAnonymous()" href="/members/new">Sign up</a>
+            <a class="hover-line" sec:authorize="isAnonymous()" href="/members/login">Login</a>
+            <a class="hover-line" sec:authorize="isAuthenticated()" href="/members/logout">Logout</a>
+        </nav>
     </div>
-</nav>
-<!-- Header-->
-<header class="bg-skyblue bg-gradient text-white">
-    <div class="container px-4 text-center">
-        <h1 class="fw-bolder">Welcome to Fits</h1>
-        <p class="lead">자신의 체형 어울리는 옷이 궁금한가요?</p>
-        <form action="/start">
-            <h3>로그인 후 서비스를 이용해보세요!</h3>
-        </form>
 
-    </div>
-</header>
-<!-- About section-->
-<section id="about">
-    <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-            <div class="col-lg-8">
-                <h2>Fits?</h2>
-                <p class="lead">본인 체형에 어울리는 옷이 뭔지 모르시겠다구요?</p>
+    <section class="preview">
+        <div class="preview__item">
+            <div class="preview__img">
+                <div class="preview__img-inner" style=background-image:url('/bootstrap/img/2.jpg')>
 
-                <ul>
-                    <li>상체가 좀 뚱뚱하다면?</li>
-                    <li>다리가 짧다면?</li>
-                    <li>다리가 좀 두껍다면?</li>
+                </div>
+            </div>
+            <div class="preview__item-cover">
 
-                </ul>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <h2 class="column__title line-effect">The Meeting</h2>
+                    <p class="column__text line-effect">We must never forget that the world is, in the first place, a subjective phenomenon.</p>
+                </div>
+                <div class="column">
+                    <h2 class="column__title line-effect">Our former considerations, and the observation of the concrete case especially, show us that the important subjective condition is the regression. </h2>
+                    <p class="column__text line-effect">The impressions we receive from these happenings are also our own doing. It is not the case that the impressions are forced on us unconditionally, but our disposition gives the value to the impressions. </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Services section-->
-<section class="bg-light" id="services">
-    <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-            <div class="col-lg-8">
-                <h2>Services we offer</h2>
-                <p class="lead">체형을 인식 후 어울리는 스타일을 추천해드립니다.</p>
-                <table border="0">
-                    <tr>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/casual_woman.jpeg" width="375" height="650"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/casual_man.jpeg" width="375" height="650"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/casual_label.JPG" width="450" height="650"></td>
-                    </tr>
-                </table>
-                <table border="0">
-                    <tr>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/modern_man.jpeg" width="400" height="600"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/modern_label.JPG" width="400" height="600"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/modern_woman.jpeg" width="400" height="600"></td>
+        <div class="preview__item">
+            <div class="preview__img">
+                <div class="preview__img-inner" style=background-image:url('/bootstrap/img/1.jpg')>
 
-                    </tr>
-                </table>
-                <table border="0">
-                    <tr>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/sporty_woman.jpeg" width="400" height="600"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/sporty_label.JPG" width="400" height="600"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/sporty_man.jpeg" width="400" height="600"></td>
-                    </tr>
-                </table>
-                <table border="0">
-                    <tr>
+                </div>
+            </div>
+            <div class="preview__item-cover">
 
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/maximum_label.JPG" width="325" height="600"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/max_woman.jpeg" width="550" height="600"></td>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/max_man.jpeg" width="325" height="600"></td>
-
-                    </tr>
-                </table>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <h2 class="column__title line-effect">Unconscious Phantasy</h2>
+                    <p class="column__text line-effect">Every case is theoretically inexhaustible.</p>
+                </div> <div class="column">
+                <h2 class="column__title line-effect">The simplest way to come to an understanding of this important event would be by making an exact inquiry into the circumstances of the moment.</h2>
+                <p class="column__text line-effect">The first thing I did was to question the patient about the society in which she had been at that time, and as to what was the farewell gathering to which she had been just before. She had been at a farewell supper, given in honor of her best friend, who was going to a foreign health-resort for a nervous illness.</p>
+            </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Contact section-->
-<section id="contact">
-    <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-            <div class="col-lg-8">
-                <h2>Contact us</h2>
-                <h2 class="lead">Our team of customer care Fits is ready to hear from you. </h2>
-                <hr>
-                <h2>Get In Touch</h2>
-                <br>
-                <table class="tb" width="1000dx" border="0">
-                    <tr>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/address.png" width="80" height="80" align="right"></td>
-                        <td align="center">ADDRESS) Fit Team, 116 Samseongyo-ro 16-gil, Seongbuk-gu, Seoul</td>
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/call.png"width="80" height="80" align="right"></td>
-                        <td align="center">PHONE) Office +82 760 3921</td>
+        <div class="preview__item">
+            <div class="preview__img">
+                <div class="preview__img-inner" style=background-image:url('/bootstrap/img/3.jpg')>
 
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                        <td><img src="https://capstonfitsbucket.s3.ap-northeast-2.amazonaws.com/contactus/email.png"width="80" height="80" align="right"></td>
-                        <td align="center">EMAIL) fits_development@hansung.ac.kr</td>
+                </div>
+            </div>
+            <div class="preview__item-cover">
 
-                    </tr>
-                </table>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <h2 class="column__title line-effect">The Conception of Transference</h2>
+                    <p class="column__text line-effect">Both tendencies have their own previous psychological story.</p>
+                </div>
+                <div class="column">
+                    <h2 class="column__title line-effect">Analysis must be a biological method, that is, a method which tries to connect the highest subjective well-being with the most valuable biological activity. </h2>
+                    <p class="column__text line-effect">The best result for a person who passes through analysis, is that he becomes at the end what he really is, in harmony with himself, neither bad nor good, but an ordinary human being.</p>
+                </div>
             </div>
         </div>
+        <div class="preview__map">
+            <div class="preview__map-item">
+                <div class="dot">
+
+                </div>
+            </div>
+            <div class="preview__map-item">
+                <div class="dot">
+
+                </div>
+            </div>
+            <div class="preview__map-item"><div class="dot">
+
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <figure class="thumb">
+            <div class="thumb__img thumb__img--nocursor">
+                <div class="thumb__img-inner" style=background-image:url('/bootstrap/img/22.jpg')>
+
+                </div>
+            </div>
+            <figcaption class="oh thumb__caption">
+                <span class="oh__inner thumb__caption-inner">01</span>
+            </figcaption>
+        </figure>
+        <figure class="thumb">
+            <div class="thumb__img thumb__img--nocursor">
+                <div class="thumb__img-inner" style=background-image:url('/bootstrap/img/11.jpg')>
+
+                </div>
+            </div>
+            <figcaption class="oh thumb__caption">
+                <span class="oh__inner thumb__caption-inner">02</span>
+            </figcaption>
+        </figure>
+        <figure class="thumb">
+            <div class="thumb__img thumb__img--nocursor">
+                <div class="thumb__img-inner" style=background-image:url('/bootstrap/img/33.jpg')>
+
+                </div>
+            </div> <figcaption class="oh thumb__caption">
+            <span class="oh__inner thumb__caption-inner">03</span>
+        </figcaption>
+        </figure>
+    </section>
+    <div class="frame frame--footer">
+        <div class="frame__demos" align="center">
+            <a class="frame__demo frame__demo--current">Welcome to Fits</a><br>
+            <form action="/start">
+                <a class="frame__demo hover-line" href="/members/login">로그인 후 서비스를 이용하세요.</a>
+            </form>
+        </div>
     </div>
-</section>
-<!-- Footer-->
-<footer class="py-5 bg-dark">
-    <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="../static/bootstrap/js/scripts.js"></script>
+</main>
+<svg class="cursor" width="20" height="20"><circle class="cursor__inner" cx="10" cy="10" r="5"/></svg>
+<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js">
+
+</script>
+<script type="module" src="/bootstrap/js/index2.js">
+
+</script><script src="/bootstrap/js/index22.js" nomodule="" defer>
+
+</script>
 </body>
 </html>
-
-

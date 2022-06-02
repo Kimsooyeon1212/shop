@@ -16,10 +16,21 @@ public class ResultService {
 
     private final ResultRepository resultRepository;
 
-    public String getResultPage(String to) {
+    public List<Result> getResultPage(String to) {
        // Integer to1 = Integer.parseInt(to);
-        List<Result> list = resultRepository.findByName(to);
-        return list.get(0).getUrl();
+        List<Result> list = resultRepository.findByNameLike("%"+to+"%");
+        System.out.println(list.size());
+        String result1 = null;
+        String result2 = null;
+        String result3 = null;
+        String result4 = null;
+
+        result1 = list.get(0).getUrl();
+        result2 = list.get(1).getUrl();
+        result3 = list.get(2).getUrl();
+        result4 = list.get(3).getUrl();
+
+        return list;
     }
 
 }

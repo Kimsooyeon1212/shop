@@ -14,23 +14,23 @@
 <body>
 
 <div class="container">
-     <img src="{{ url_for('stream')}}" width="70%">
+    <img src="{{ url_for('stream')}}" width="70%">
     <p id="test"></p>
 </div>
 <script>
 
-      var source = new EventSource("/info");
+    var source = new EventSource("/info");
     source.addEventListener('message', function(e) {
         var data = JSON.parse(e.data);
         // document.write(e.data);
         if (data.mydata == "data"){
             // document.getElementById("success").innerHTML = "Finish";
             //여기여기
-             //여기여기
+            //여기여기
             source.removeEventListener('message', arguments.callee)
 //location.href="/경로?보낼변수명=" + 값;
-                    location.href = "/second"; //timeselect로 이동
-              //2초 타이머
+            location.href = "/second"; //timeselect로 이동
+            //2초 타이머
             // sleep(3000);
 
         }
@@ -38,5 +38,3 @@
 </script>
 </body>
 </html>
-
-

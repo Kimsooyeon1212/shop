@@ -1,27 +1,96 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+<html lang="en" class="no-js"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/base}">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="icon" type="image/x-icon" href="/bootstrap/assets/favicon.ico" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="/bootstrap/css/styles.css" rel="stylesheet" />
-</head>
-<body class="pt-5">
-<div layout:fragment="content">
 
-    <h1><div style="text-align: center">Woman Start Fits</div></h1>
-    <h3><div style="text-align: center">기준선에 맞춰 선 후 카메라를 통한 체형 촬영을 진행합니다.</div></h3>
-    <div>
+<link rel="icon shortcut" href="/bootstrap/assets/favicon.ico" />
+<link rel="stylesheet" href="https://use.typekit.net/vyr6uuw.css">
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/index.css">
+<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js">
 
-        <a href="http://127.0.0.1:5000/first"><p>촬영</p></a>
-        <iframe src="http://127.0.0.1:5000/first" title="first" width="1550px" height="670px" align="center"></iframe>
+</script>
+<script type="module" src="/bootstrap/js/index2.js">
+
+</script><script src="/bootstrap/js/index22.js" nomodule="" defer>
+
+</script>
+<th:block layout:fragment="css">
+    <style>
+        button{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+
+            /* 생략 */
+            margin: 0;
+            padding: 0.5rem 1rem;
+
+
+            font-size: 1rem;
+            font-weight: 400;
+            text-align: center;
+            text-decoration: none;
+
+            display: inline-block;
+            width: auto;
+
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+            cursor: pointer;
+
+            transition: 0.5s;
+        }
+        button:active,
+        button:hover,
+        button:focus {
+            background: var(—button-hover-bg-color);
+            outline: 0;
+        }
+        button:disabled {
+            opacity: 0.5;
+        }
+        #wrapper{
+            width:300px;
+            margin: auto;
+        }
+        #btn{
+            margin: auto;
+            display: block;
+        }
+
+    </style>
+</th:block>
+<body>
+<main id="main-holder">
+    <div layout:fragment="content">
+        <div id="wrapper">
+            <button type="button" id="btn" class="resultBtn" onclick="location.href='end.html'">Result</button>
+            <br>
+        </div>
+        <h2><div style="text-align: center">Woman Start Fits</div></h2>
+        <h3><div style="text-align: center">기준선에 맞춰 선 후 카메라를 통한 체형 촬영을 진행합니다.</div></h3>
+        <div>
+            <a href="http://127.0.0.1:5000/first"></a>
+            <p align="middle">
+                <iframe src="http://127.0.0.1:5000/first" title="stream" width="525px" height="525px" align="center" style="border:none" scrolling="no" allowTransparency="true"></iframe>
+            </p>
+
+        </div>
+
+
     </div>
-
-
-</div>
-
+</main>
 </body>
 </html>
+
+
+
+
+
+
+
