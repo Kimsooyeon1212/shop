@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function(){
+            var result1 = document.getElementById('result1').value;
+            var result2 = document.getElementById('result2').value;
+            var result3 = document.getElementById('result3').value;
+            var result4 = document.getElementById('result4').value;
+
+            var img1 = document.getElementById('img1');
+            var img2 = document.getElementById('img2');
+            var img3 = document.getElementById('img3');
+            var img4 = document.getElementById('img4');
+
+            img1.setAttribute( 'src', result1 );
+            img2.setAttribute( 'src', result2 );
+            img3.setAttribute( 'src', result3 );
+            img4.setAttribute( 'src', result4 );
+        }
+    </script>
+</head>
+<body>
+<h2 align="center">당신의 체형 분석을 통한 맞춤형 코디를 추천합니다!</h2>
+<input type="hidden" id = "result1" th:value = "${result1}">
+<input type="hidden" id = "result2" th:value = "${result2}">
+<input type="hidden" id = "result3" th:value = "${result3}">
+<input type="hidden" id = "result4" th:value = "${result4}">
+
+<table border="0" align="center">
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>Casual Look</td>
+                </tr>
+                <tr>
+
+                    <td><img id="img1" src="" height="600" width="400"></td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>Modern Look</td>
+                </tr>
+                <tr>
+
+                    <td><img id="img2" src="" height="600" width="400"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>Spoty Look</td>
+                </tr>
+                <tr>
+
+                    <td><img id="img3" src="" height="600" width="400"></td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>Maximum Look</td>
+                </tr>
+                <tr>
+
+                    <td><img id="img4" src="" height="600" width="400"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
