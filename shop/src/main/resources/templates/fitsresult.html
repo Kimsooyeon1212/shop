@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" class="no-js"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/base}">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
@@ -21,9 +26,16 @@
             img4.setAttribute( 'src', result4 );
         }
     </script>
+    <style>
+        td{
+            font-family: forma-djr-deck,sans-serif;
+        }
+    </style>
 </head>
 <body>
+<div layout:fragment="content">
 <h2 align="center">당신의 체형 분석을 통한 맞춤형 코디를 추천합니다!</h2>
+    <br>
 <input type="hidden" id = "result1" th:value = "${result1}">
 <input type="hidden" id = "result2" th:value = "${result2}">
 <input type="hidden" id = "result3" th:value = "${result3}">
@@ -34,7 +46,7 @@
         <td>
             <table>
                 <tr>
-                    <td>Casual Look</td>
+                    <td style="text-align: center">Casual Look</td>
                 </tr>
                 <tr>
 
@@ -45,7 +57,7 @@
         <td>
             <table>
                 <tr>
-                    <td>Modern Look</td>
+                    <td style="text-align: center">Modern Look</td>
                 </tr>
                 <tr>
 
@@ -56,9 +68,10 @@
     </tr>
     <tr>
         <td>
+            <br>
             <table>
                 <tr>
-                    <td>Spoty Look</td>
+                    <td style="text-align: center">Sporty Look</td>
                 </tr>
                 <tr>
 
@@ -67,9 +80,10 @@
             </table>
         </td>
         <td>
+            <br>
             <table>
                 <tr>
-                    <td>Maximum Look</td>
+                    <td style="text-align: center">Maximum Look</td>
                 </tr>
                 <tr>
 
@@ -79,5 +93,7 @@
         </td>
     </tr>
 </table>
+</div>
+
 </body>
 </html>

@@ -23,5 +23,7 @@ public class Result {
     @Column(unique = true)
     private String url;
 
+    private String intod;
+
 
 }
